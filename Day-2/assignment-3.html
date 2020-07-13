@@ -1,0 +1,22 @@
+<html>
+    <script>
+        function fun()
+        {
+        var d = new Date(); 
+        var dd= d.getDate();
+        var mm= d.getMonth();
+        mm=mm+1;
+        mm=mm<10?'0'+mm:mm;
+        var yy= d.getFullYear();
+        document.getElementById('hide').style.display='none';
+        document.getElementById('day').innerHTML="Todays Date is : " + dd+'-'+mm+'-'+yy; 
+
+    }   
+    </script>
+<body>
+    <h2 id="hide">Click button to get date</h2>
+    <p id="day"></p>
+    <button type="submit" onclick="fun()">Get Date</button>
+
+</body>
+</html>
