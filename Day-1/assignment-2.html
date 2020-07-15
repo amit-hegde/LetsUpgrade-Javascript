@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //difference between var, let and const
+
+    // 1. var
+    //The var statement declares a variable.
+    //Variables are containers for storing information.
+    //To assign a value to the variable, use the equal sign 
+    //and also we can also assign a value to the variable when you declare it
+    var a=10
+    var b=5
+    console.log('using var=',a+b)
+     
+    //2.let
+    //Variables declared with the let keyword can have Block Scope.
+    //Variables declared inside a block {} cannot be accessed from outside the block:
+    // it is used to assign the value to exsisting variable in side the block  without effecting the gloabal variable
+    {
+        let a=20
+        console.log('using let=',a+b)
+    }
+     
+    //3.const
+    //Variables defined with const behave like let variables, except they cannot be reassigned:
+    //once the variable is assigned using const then we cannot assign again
+    {const a=15
+    console.log('using const=',a+b)   
+    }
+</script>
+</body>
+</html>
