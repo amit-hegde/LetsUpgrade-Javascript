@@ -1,23 +1,18 @@
-<html>
-    <script>
-        var d = new Date(); 
-        var day = ['Sunday', 'Monday', 'Tuesday', 
-            'Wednesday', 'Thursday', 'Friday', 'Saturday' ]; 
-        var n = day[d.getDay()];
-        document.write("Today is : " + n); 
-        document.write("<br/>"); 
-
-        var h = d.getHours(); 
-        var ct = h >= 12 ? 'PM' : 'AM'; 
-        h=h-12;
-        var m = d.getMinutes(); 
-        m = m < 10 ? '0' + m : m; 
-        var s= d.getSeconds();
-        var myTime = h + " " + ct + " : " + m + " : "+ s; 
-        document.write("\tCurrent time is : " + myTime); 
-
-    </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 <body>
-
+ <p>   <h2>
+       Q. Write a JS code which takes input from the user and logs it in the console.
+    </h2> </p>
+    <script> 
+        //Write a JS code which takes input from the user and logs it in the console.
+        a=prompt("Enter your name:-")
+        console.log("Name =",a) //name will be printed in consol
+       </script>
 </body>
 </html>

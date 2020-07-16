@@ -1,13 +1,63 @@
-<html>
-    <script>
-        function fun()
-        {
-            window.print();
-        }
-
-    </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 <body>
-    <p id="a">I Love LetsUpgrade</p>
-    <button type="submit" onclick="fun()">Print</button>
+    <script>
+        //Explain with examples the remaining methods of String and Array
+
+        //String methods
+          {
+        let a = "An alert box is often used if you want to make sure information comes through to the user"
+        console.log(a)
+        //search()
+        //The search() method searches a string for a specified value and returns the position of the match:
+        console.log(a.search('information'))
+        //slice()
+        //slice() extracts a part of a string and returns the extracted part in a new string. 
+        console.log(a.slice(a.search('information'),a.search('comes')-1))
+        //replacr()
+        //The replace() method replaces a specified value with another value in a string:
+        console.log(a.replace('information','data'))
+        //concat()
+        //concat() joins two or more strings:
+        let b='!'
+        console.log(a.concat('',b))
+        //trim()
+        //The trim() method removes whitespace from both sides of a string:
+        let c = "       An alert box is often used if you want to make sure information comes through to the user"
+        console.log(c)
+        console.log(c.trim())
+          }
+
+        //Array Methods
+        {
+            let a=[1,5,2.2,'hello']
+            console.log(a)
+          //tostring()
+          // toString() converts an array to a string of (comma separated) array values.
+          console.log(a.toString())
+          //shift()
+          //The shift() method removes the first array element and "shifts" all other elements to a lower index.
+          console.log(a.shift())
+          //length()
+          //The length property provides an easy way to append a new element to an array:
+          console.log(a.length)
+          //slice()
+          //The slice() method slices out a piece of an array into a new array.
+          console.log(a.slice(1))
+          //splice()
+          //The splice() method can be used to add new items to an array:
+          console.log(a.splice(2,0,8,6))
+          //sort()
+          console.log(a.sort())
+          
+        }
+        
+      
+    </script>
 </body>
 </html>
