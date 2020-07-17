@@ -1,0 +1,23 @@
+<html>
+    <script>
+        var d = new Date(); 
+        var day = ['Sunday', 'Monday', 'Tuesday', 
+            'Wednesday', 'Thursday', 'Friday', 'Saturday' ]; 
+        var n = day[d.getDay()];
+        document.write("Today is : " + n); 
+        document.write("<br/>"); 
+
+        var h = d.getHours(); 
+        var ct = h >= 12 ? 'PM' : 'AM'; 
+        h=h-12;
+        var m = d.getMinutes(); 
+        m = m < 10 ? '0' + m : m; 
+        var s= d.getSeconds();
+        var myTime = h + " " + ct + " : " + m + " : "+ s; 
+        document.write("\tCurrent time is : " + myTime); 
+
+    </script>
+<body>
+
+</body>
+</html>
