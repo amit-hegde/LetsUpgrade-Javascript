@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Question 7:Write the code which outputs prime numbers in the interval from 2 to n.</h2>
+    <script>
+        //Question 7:Write the code which outputs prime numbers in the interval from 2 to n.
+        function prime(n)
+        {  
+            let a=[]
+                for(i=1;i<n;i++)
+                              { 
+                                let f=true
+                                if (i==1){continue}
+                                  for(j=2;j<i;j++)
+                                  {
+                                    if(i%j==0)
+                                    {   
+                                        f=false
+                                        break
+                                    }
+                                  }
+                                  if(f == true){
+                                     a.push(i)
+                                  }
+                              }
+         return(a)
+           }
+           let n=prompt("Enter the limit:-")
+           console.log(`List of prime no when n=${n} is :- ${prime(n)}`)
+    </script>
+</body>
+</html>

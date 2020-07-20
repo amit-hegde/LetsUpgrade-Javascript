@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Question 6:
+        Rewrite the function using '?' or '||'
+        Write a loop which prompts for a number greater than 100. If the visitor enters another number – ask them
+        to input again.</h2>
+    <script>
+        //Write a loop which prompts for a number greater than 100. If the visitor enters another number – ask them to input again.
+        function fun(){
+            let s="Enter no:-"
+            n=0
+            while(n==0){
+            let a= prompt(s)
+            console.log("Enterd no is",a)
+            a>100 || a.length <1 ? n=1 : s="Enter no again:-"
+            }
+        }
+        fun()
+        console.log("Exited")
+    </script>
+</body>
+</html>
