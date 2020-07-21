@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Q2 Create a Class User with properties as name, age & email. He can login and logout.
+        Create another class Moderator which has all the features of User, plus additional functionality to Add coins and remove coins.
+        Create one more class Admin which has all the features of Moderator plus additional features like add a Course and delete a particular course for a user. */
+        </h2>
+    <script>
+        /* Create a Class User with properties as name, age & email. He can login and logout.
+Create another class Moderator which has all the features of User, plus additional functionality to Add coins and remove coins.
+Create one more class Admin which has all the features of Moderator plus additional features like add a Course and delete a particular course for a user. */
+
+        class User {
+            constructor(name, age,email) {
+              this.name = name;
+              this.age = age;
+              this.email = email;
+              this.luCoins = 0;
+              this.courses = [];
+            }
+        
+        
+            login(){
+                console.log(`${this.name} has logged in`);
+                return this;
+            }
+            logout(){
+                console.log(`${this.name} has logged out`);
+                return this;
+            }
+
+            getDetails(){
+                console.log(`Name is ${this.name}\n email is ${this.email}\n total coins=${this.luCoins}\n Course=${this.courses}`);
+                return this;
+            }
+        
+        }
+
+        class Moderator extends User{
+            constructor(name,age,email,role){
+                super(name,age,email);
+                this.role = role;
+            }
+            addCoins(user){
+                user.luCoins++;
+                console.log(`${user.name} has ${user.luCoins} coins`);
+                console.log(user)
+                return user;
+            }
+            
+            removeCoins(user){
+                user.luCoins--;
+                console.log(`${user.name} has ${user.luCoins} coins`);
+                console.log(user)
+                return user;
+            }
+        
+        }
+        
+        class Admin extends Moderator{
+           addCourse(user,course){
+               user.courses.push(course);
+               console.log(user);
+           }
+        }
+        let user1 = new User('Denver',25,'d@gmail.com')
+let user2 = new User('Nairobi',24,'n@gmai.com')
+let mod = new Moderator('Berlin',27,'b@gmail.com','Moderator')
+let admin = new Admin('Rio',23,'r@gmail.com',"Admin")
+
+let users = [user1,user2,mod,admin]
+
+user1.login().getDetails().logout()
+
+admin.addCourse(user1,'Javascript')
+admin.addCourse(user2,'Python')
+admin.addCourse(user1,'Blockchain')
+
+mod.addCoins(user1)
+mod.addCoins(user2)
+mod.addCoins(user1)
+mod.removeCoins(user2)
+
+user1.login().getDetails().logout()
+
+console.log(users)
+    </script>
+</body>
+</html>
