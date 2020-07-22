@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>       
+    <script>
+        /*Question 2:
+Write a program that will display the multiplication table of a number on the webpage in a proper
+format. Take the input from the user.*/
+
+
+function fun()
+{     
+    
+    const val =document.getElementById("no").value
+const tab = document.querySelector('#tab');
+        console.log(tab)
+        tab.innerHTML=``
+        const h = document.querySelector("#h3")
+        h.innerHTML=`<br>Multiplication table of ${val}<br>`
+       for(i=1;i<=10;i++){
+       tab.innerHTML +=`<td><tr>${val+" X "+i+" = "}</tr><tr>${i*val}</tr></td>`
+      
+       }
+       document.querySelector('#tab').style.border="solid "
+}
+ </script>
+</head>
+<body>
+    <h2>Question 2:
+        Write a program that will display the multiplication table of a number on the webpage in a proper
+        format. Take the input from the user.</h2>
+    
+    <input type="text" id="no" placeholder="Enter no">
+    <button type="submit" onclick="fun()">Get table</button>
+    <h3 id="h3"></h3>
+    <table id="tab" style="border:black 1px;">
+
+    </table>
+
+</body>
+</html>

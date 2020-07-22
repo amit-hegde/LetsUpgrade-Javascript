@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>
+        Question 1:
+Write a program that will iterate over an array of colors and change the background of the page
+after 5 seconds.
+    </h2>
+    
+    <Script>
+        /*
+        Question 3:
+Make a webpage that will ask the name of the user. Then will display a welcome message on the
+webpage. Also the webpage should also have a clock.Using the toggle method of classList add a dark mode feature to the website.
+        */
+
+        let a=['red','orange','blue','green','grey','black']
+        let i=0
+        setInterval(function(){ 
+            if(i==a.length){i=0}
+           document.body.style.backgroundColor = a[i]
+           i++
+        },5000)
+    </Script>
+</body>
+</html>
