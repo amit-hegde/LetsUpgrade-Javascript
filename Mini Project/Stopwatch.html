@@ -1,0 +1,156 @@
+<html> 
+
+<head> 
+	<style>
+		body{
+			background-image: url(https://images.pexels.com/photos/396547/pexels-photo-396547.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+			background-size:cover;
+		
+		}
+     .time{
+		width: 25px; 
+		border-color:rgba(105, 230, 230, 0.767) ;
+		font-size: 16px; 
+		font-weight: bold; 
+		background-color: transparent;
+		color: greenyellow;
+	 }
+	 #txt{
+		width: 100px; 
+		border: none;
+		 font-size: 16px; 
+		font-weight: bold;
+		 background-color: transparent;
+		 color:darkgrey;
+	 }
+	 button{
+		 border-radius: 5px;
+	 }
+	 .d1{
+		 margin: 20% 40%;
+		 position: fixed;
+		 background-color: rgba(39, 42, 54, 0.9);
+		 width: 250px;
+		 height: 200px;
+		 border: ridge 3px darkslategray;
+		 text-align: center;
+	 }
+	 .d2{
+		 margin-top: -20px;
+	 }
+	 h4{
+		 margin-left: 100px;
+		 color: darkgray;
+	 }
+	 h1{
+		 color: azure;
+	 }
+	 font{
+		color: aquamarine ; 
+	 }
+	 button{
+		background-color: rgba(23, 23, 24, 0.9);
+		color: rgb(240, 3, 3);
+		border-color: aquamarine;
+		padding:3px ;
+	 }
+	</style>
+	<script> 
+		var mins,secs,txt,cd,temp,tm,ts
+		function countdown() { 
+			txt=document.getElementById("txt")
+			mins= document.getElementById("minutes").value; 
+			let s=Number(document.getElementById("seconds").value)
+			mins=Number(mins)
+			temp=Math.floor((s/60+mins)*60)
+			tm=mins
+			ts=s
+			secs=temp
+			setTimeout('Decrement()', 60); 
+		} 
+		function reset(){
+			clearTimeout(cd)
+			txt.value="Enter Time"
+			minutes.value =""; 
+			seconds.value ="" ; 
+			minutes.style.color = "greenyellow"; 
+			seconds.style.color = "greenyellow"; 
+			minutes.style.borderColor = "rgba(105, 230, 230, 0.767)"; 
+			seconds.style.borderColor = "rgba(105, 230, 230, 0.767)"; 
+		}
+		function restart(){
+			clearTimeout(cd)
+			minutes.style.color = "greenyellow"; 
+			seconds.style.color = "greenyellow"; 
+			minutes.value = tm; 
+			seconds.value = ts;
+			secs=temp
+			setTimeout('Decrement()', 60); 
+		}
+		function Decrement() { 
+			txt.value="Time left"
+			if (document.getElementById) { 
+				minutes = document.getElementById("minutes"); 
+				seconds = document.getElementById("seconds"); 
+				minutes.style.borderColor = "transparent"; 
+				seconds.style.borderColor = "transparent"; 
+				if (seconds < 59) { 
+					seconds.value = secs; 
+				} 
+				else { 
+					minutes.value = getminutes(); 
+					seconds.value = getseconds(); 
+				}  
+				if (mins < 1) { 
+					minutes.style.color = "orange"; 
+					seconds.style.color = "orange"; 
+				} 
+				if (mins < 1 && secs<10) { 
+					minutes.style.color = "red"; 
+					seconds.style.color = "red"; 
+				} 
+				if (mins < 0) { 
+					   var snd = new Audio("https://media.geeksforgeeks.org/wp-content/uploads/20190531135120/beep.mp3");  
+ 					   snd.play();
+					//alert('Time up'); 
+					setTimeout('alert("Time up")', 60);
+					minutes.value = 00; 
+					seconds.value = 00; 
+				} 
+				else { 
+					secs--; 
+					cd=setTimeout('Decrement()', 1000); 
+				} 
+			} 
+		} 
+
+		function getminutes() { 
+			mins = Math.floor(secs / 60); 
+			return mins; 
+		} 
+
+		function getseconds() { 
+			return secs - Math.round(mins * 60); 
+		} 
+
+	</script> 
+</head> 
+
+<body> 
+	<div class="d1"> 
+		<h1>Stopwatch</h1>
+		<h4>Min &nbsp; &nbsp;Sec</h4>
+		<div class="d2">
+		<input id="txt" type="text" value="Enter Time">
+		<input id="minutes" class="time" type="text" maxlength="2">
+		<font size="5"> : </font> 
+		<input id="seconds" type="text" class="time" maxlength="2"> 
+	</div>
+						<br><br>
+		<button onclick="countdown()">START</button>&nbsp;
+		<button onclick="restart()">Restart</button>&nbsp;
+		<button onclick="reset()">Reset</button>				
+	</div> 
+</body> 
+
+</html> 
